@@ -1,0 +1,31 @@
+<div class="card" >
+    <div class="card-header">
+        Empleados
+    </div>
+    <div class="card-body">
+        
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>                            
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empleado of empleados; let i = index" >
+                            <td>{{empleado.id}} </td>
+                            <td>{{empleado.nombre}} </td>
+                            <td>{{empleado.correo}}</td> 
+                            <td>
+                               <a class="btn btn-info"  routerLink="/editar-empleado/{{empleado.id}}"> Editar </a> | 
+                               <a class="btn btn-danger" role="button" (click)="borrarRegistro(empleado.id, i)"> Borrar </a>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            
+    </div>
+  </div>
